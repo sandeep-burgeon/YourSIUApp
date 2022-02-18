@@ -1,0 +1,85 @@
+<ion-content>
+  <ion-row>
+    <ion-col>
+      <h3 class="title">Register<ion-icon name="close-circle-outline" (click)="dismissModal()" style="font-size: 24px;
+        float: right;"></ion-icon></h3>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="ion-text-center">
+      <img src="assets/img/logo.png" class="logo">
+    </ion-col>
+    <ion-text class="ion-text-center authentinfo">Log in to submit a secure order or submit a registration request
+      if you don't have a login. </ion-text>
+  </ion-row>
+  <form (ngSubmit)="signUp()" [formGroup]="credentials" class="credentform">
+    <div class="input-group">
+      <ion-item>
+        <ion-label position="floating">First Name</ion-label>
+        <ion-input type="text" placeholder="First Name" formControlName="first_name"></ion-input>
+      </ion-item>
+      <div *ngIf="(first_name.dirty || first_name.touched) && first_name.errors" class="first_name">
+        <span *ngIf="first_name.errors?.required">First Name is required</span>
+      </div>
+    </div>
+    <div class="input-group">
+      <ion-item>
+        <ion-label position="floating">Last Name</ion-label>
+        <ion-input type="text" placeholder="Last Name" formControlName="last_name"></ion-input>
+      </ion-item>
+      <div *ngIf="(last_name.dirty || last_name.touched) && last_name.errors" class="last_name">
+        <span *ngIf="last_name.errors?.required">Last Name is required</span>
+      </div>
+    </div>
+    <div class="input-group">
+      <ion-item>
+        <ion-label position="floating">Company Name</ion-label>
+        <ion-input type="text" placeholder="Company Name" formControlName="company_name"></ion-input>
+      </ion-item>
+      <div *ngIf="(company_name.dirty || company_name.touched) && company_name.errors" class="company_name">
+        <span *ngIf="company_name.errors?.required">Company Name is required</span>
+      </div>
+    </div>
+    <div class="input-group">
+      <ion-item>
+        <ion-label position="floating">Phone Number</ion-label>
+        <ion-input type="text" placeholder="Phone Number" formControlName="phone_number"></ion-input>
+      </ion-item>
+      <div *ngIf="(phone_number.dirty || phone_number.touched) && phone_number.errors" class="phone_number">
+        <span *ngIf="phone_number.errors?.required">Phone Number is required</span>
+      </div>
+    </div>
+    <div class="input-group">
+      <ion-item>
+        <ion-label position="floating">User Email</ion-label>
+        <ion-input type="email" placeholder="User Email" formControlName="email"></ion-input>
+      </ion-item>
+      <div *ngIf="(email.dirty || email.touched) && email.errors" class="errors">
+        <span *ngIf="email.errors?.required">User Email is required</span>
+        <span *ngIf="email.errors?.email">User Email is invalid</span>
+      </div>
+    </div>
+    <div class="input-group">
+      <ion-item>
+        <ion-label position="floating">Company Billing Email Address</ion-label>
+        <ion-input type="email" placeholder="Company Billing Email Address" formControlName="billing_email_address"></ion-input>
+      </ion-item>
+      <div *ngIf="(billing_email_address.dirty || billing_email_address.touched) && billing_email_address.errors" class="errors">
+        <span *ngIf="billing_email_address.errors?.required">Company Billing Email Address is required</span>
+        <span *ngIf="billing_email_address.errors?.email">Company Billing Email Address is invalid</span>
+      </div>
+    </div>
+    <div class="input-group">
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" placeholder="Password" formControlName="user_pass"></ion-input>
+      </ion-item>
+      <div *ngIf="(user_pass.dirty || user_pass.touched) && user_pass.errors" class="errors">
+        <span *ngIf="user_pass.errors?.required">Password is required</span>
+        <span *ngIf="user_pass.errors?.minlength">Password needs to be 6 characters</span>
+      </div>
+    </div>
+
+    <ion-button type="submit" expand="block">Sign Up</ion-button>
+  </form>
+</ion-content>

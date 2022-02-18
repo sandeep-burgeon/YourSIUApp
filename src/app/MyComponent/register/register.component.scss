@@ -1,0 +1,21 @@
+ion-content {
+    --padding-top: 20px;
+    --padding-start: 5%;
+    --padding-end: 5%;
+    --background: linear-gradient(180deg, rgba(255,186,186,1) 0%, rgba(254,246,199,1) 100%);
+}
+.input-group {
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+ 
+.errors {
+    font-size: small;
+    color: red;
+    padding: 10px 7px;
+}
+ion-list
+{
+    --background: transparent;
+}
+ion-header ion-title{--background: #febeba;}

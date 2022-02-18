@@ -1,0 +1,7 @@
+{
+  "name": "YourSIU",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
